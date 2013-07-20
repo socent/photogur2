@@ -22,19 +22,19 @@ class PicturesController < ApplicationController
 		  	# otherwise render the view associated with the action :new (i.e. new.html.erb)
 		    render :new
 		  end
-		end
+	end
 
 	def edit
-		@picture = Picture.edit(params[:picture])
+		@picture = Picture.find(params[:id])
 	end
 
 	def update
-		@picture = Picture.update(params[:picture])
+		@picture = Picture.find(params[:id])
 			if @picture.update_attributes(params[:picture])
 				reditect_to "/pictures/#{@picture.id}"
 			else
 				render :edit
 			end
 	end
-	
+
 end
