@@ -2,9 +2,13 @@ Photogur2::Application.routes.draw do
 
   get 'pictures' => 'pictures#index'
 
-  get 'pictures/0' => 'pictures#picture0'
-  get 'pictures/1' => 'pictures#picture1'
-  get 'pictures/2' => 'pictures#picture2'
+  get 'pictures/:id' => 'pictures#show', as: "picture"
+
+end
+
+  # get 'pictures/0' => 'pictures#picture0'
+  # get 'pictures/1' => 'pictures#picture1'
+  # get 'pictures/2' => 'pictures#picture2'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -62,4 +66,3 @@ Photogur2::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-end
