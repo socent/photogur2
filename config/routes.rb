@@ -6,6 +6,9 @@ Photogur2::Application.routes.draw do
   get 'pictures/new' => 'pictures#new'
   get 'pictures/:id' => 'pictures#show', as: "picture"
 
+  get 'pictures/:id/edit' => 'pictures#edit', as: "edit_picture"
+  put 'pictures/:id' => 'pictures#update', as: "update_picture"
+
   root :to => "pictures#index"
 end
 

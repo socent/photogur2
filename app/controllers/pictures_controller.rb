@@ -24,4 +24,17 @@ class PicturesController < ApplicationController
 		  end
 		end
 
+	def edit
+		@picture = Picture.edit(params[:picture])
+	end
+
+	def update
+		@picture = Picture.update(params[:picture])
+			if @picture.update_attributes(params[:picture])
+				reditect_to "/pictures/#{@picture.id}"
+			else
+				render :edit
+			end
+	end
+	
 end
