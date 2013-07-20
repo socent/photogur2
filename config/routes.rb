@@ -6,6 +6,7 @@ Photogur2::Application.routes.draw do
   get 'pictures/new' => 'pictures#new'
   get 'pictures/:id' => 'pictures#show', as: "picture"
 
+  root :to => "pictures#index"
 end
 
   # get 'pictures/0' => 'pictures#picture0'
@@ -61,7 +62,6 @@ end
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
